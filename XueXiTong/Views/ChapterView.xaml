@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="XueXiTong.Views.ChapterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XueXiTong.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:model="using:XueXiTong.Models"
+>
+
+    <Grid>
+        <muxc:TabView x:Name="tb" TabItemsSource="{x:Bind Chapter.Cards, Mode=OneWay}" 
+                      IsAddTabButtonVisible="False" SelectionChanged="TabView_SelectionChanged"  >
+            <muxc:TabView.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="TabViewBackground" Color="Transparent"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="TabViewBackground" Color="Transparent"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </muxc:TabView.Resources>
+            <muxc:TabView.TabItemTemplate>
+                <DataTemplate>
+                    <Grid></Grid>
+                </DataTemplate>
+            </muxc:TabView.TabItemTemplate>
+            <muxc:TabView.TabStripFooter>
+                <Grid x:Name="TitleBar" Background="Transparent"/>
+            </muxc:TabView.TabStripFooter>
+
+        </muxc:TabView>
+        <WebView Margin="20,40,20,0" x:Name="wb" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Page>

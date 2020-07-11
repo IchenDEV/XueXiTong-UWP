@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="XueXiTong.Views.ChanelView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XueXiTong.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:XueXiTong.Controls" xmlns:models="using:XueXiTong.Models"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded"
+>
+
+    <Grid>
+        <Pivot Title="我的课程">
+            <PivotItem Header="我学的课">
+                <GridView x:Name="gv" Padding="10,0,10,0" IsItemClickEnabled="True" ItemClick="ListView_ItemClick" ItemsSource="{x:Bind ListItems,Mode=OneWay}" HorizontalContentAlignment="Center">
+                    <GridView.Header>
+                        <Grid Height="48"></Grid>
+                    </GridView.Header>
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Channel">
+                            <Grid CornerRadius="10" Width="220" Height="150" Margin="2">
+                                <Image x:Name="SourceImage" Source="{Binding ImageUrl,Mode=OneWay}" Stretch="Fill" />
+                                <StackPanel Background="{ThemeResource SystemControlAcrylicElementBrush}" VerticalAlignment="Bottom" Padding="5">
+                                    <TextBlock Text="{Binding CourseName,Mode=OneWay}" />
+                                    <TextBlock Text="{Binding Techerfactor,Mode=OneWay}" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+
+                </GridView>
+
+            </PivotItem>
+            <PivotItem Header="Unread">
+                <TextBlock Text="unread emails go here." />
+            </PivotItem>
+        </Pivot>
+     
+       
+    </Grid>
+</Page>
