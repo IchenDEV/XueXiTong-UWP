@@ -56,7 +56,7 @@
     <Grid>
         <muxc:NavigationView x:Name="nvSample" Margin="0,0,0,0" PaneDisplayMode="LeftCompact" PaneClosed="NvSample_PaneClosed" AlwaysShowHeader="False" SelectionChanged="NvSample_SelectionChanged" PaneOpened="NvSample_PaneOpened" IsBackEnabled="True" BackRequested="NvSample_BackRequested">
             <muxc:NavigationView.PaneCustomContent>
-                <PersonPicture x:Name="UserPicture" Height="32" ProfilePicture="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"  >
+                <PersonPicture x:Name="UserPicture" Height="32" ProfilePicture="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" DoubleTapped="UserPicture_DoubleTapped"  >
                     <PersonPicture.RenderTransform>
                         <CompositeTransform x:Name="Trans" ScaleX="1" ScaleY="1" TranslateX="4"/>
                     </PersonPicture.RenderTransform>

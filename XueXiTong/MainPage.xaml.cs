@@ -73,5 +73,11 @@ namespace XueXiTong
 
 
         }
+
+        private void UserPicture_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            State.CurrentUser = null;
+            HomeFrame.Navigate(typeof(LoginView), null, new DrillInNavigationTransitionInfo());
+        }
     }
 }
